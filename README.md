@@ -12,7 +12,7 @@ The Item Catalog project is a data-driven web application that provides a list o
   * Run `$ vagrant ssh`
   * Once inside the vagrant VM `$ cd /vagrant`
   * Setup the sqlite database `$ python database_setup.py`
-  * Populate the database `$ python database_pupulate.py`
+  * Populate the database `$ python database_populate.py`
   * Run the main script `$ python catalog.py` to view landing page at http://localhost:5000 
 
 ## Frameworks:
