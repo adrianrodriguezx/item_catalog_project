@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "nav.html" %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+      {% if unathorize_message %}  
+        <h1>{{unathorize_message}}</h1>
+        <a href="{{url_for('showCategoryItem', category_id=category.id, item_id=itemToEdit.id)}}">Return</a>
+        <h5><a href="{{url_for('newItem')}}" class="text-success">Add New Item</a></h5>
+      
+      {% else %}
+        <h1>Edit Item</h1>
+        <form action="#" method="post">
+          Name:<br>
+          <input type="text" name="name" value="{{itemToEdit.name}}">
+          <br><br>
+          Description:<br>
+          <textarea rows="4" cols="50" name="description">{{itemToEdit.description}}</textarea>
+          <br><br>
+          Category:<br>
+          <select name="category_id">
+          		<option value="{{category.id}}">{{category.name}}</option>
+          </select>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+        <a href="{{url_for('showCategoryItem', category_id=category.id, item_id=itemToEdit.id)}}">Cancel</a>    
+      {% endif %}
+      </div>
+    </div>
+</div>
+{% endblock %}
